@@ -1,0 +1,13 @@
+dbListTables(db)
+ [1] "avh_long"       "avh_wide"       "ccon_long"      "cda_long"      
+ [5] "cgdpe_long"     "cgdpo_long"     "ck_long"        "cor_exp_long"  
+ [9] "country_codes"  "csh_c_long"     "csh_g_long"     "csh_i_long"    
+[13] "csh_m_long"     "csh_r_long"     "csh_x_long"     "ctfp_long"     
+[17] "cwtfp_long"     "delta_long"     "emp_long"       "hc_long"       
+[21] "i_cig_long"     "i_outlier_long" "i_xm_long"      "i_xr_long"     
+[25] "labsh_long"     "measles"        "pl_c_long"      "pl_con_long"   
+[29] "pl_da_long"     "pl_g_long"      "pl_gdpo_long"   "pl_i_long"     
+[33] "pl_k_long"      "pl_m_long"      "pl_x_long"      "pop_long"      
+[37] "rconna_long"    "rdana_long"     "rgdpe_long"     "rgdpna_long"   
+[41] "rgdpo_long"     "rkna_long"      "rtfpna_long"    "rwtfpna_long"  
+[45] "statcap_long"   "xr_long"       
