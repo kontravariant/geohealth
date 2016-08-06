@@ -1,0 +1,195 @@
+WHO Region Code,WHO Region,PWT Country Code,PWT Country Name
+7,EMRO,ABW,Aruba
+9,EURO,AGO,Angola
+1,AFRO,AIA,Anguilla
+8,EURO,ALB,Albania
+1,AFRO,ARE,United Arab Emirates
+4,PAHO,ARG,Argentina
+4,PAHO,ARM,Armenia
+9,EURO,ATG,Antigua and Barbuda
+13,WPRO,AUS,Australia
+8,EURO,AUT,Austria
+9,EURO,AZE,Azerbaijan
+4,PAHO,BDI,Burundi
+6,EMRO,BEL,Belgium
+12,SEARO,BEN,Benin
+4,PAHO,BFA,Burkina Faso
+10,EURO,BGD,Bangladesh
+8,EURO,BGR,Bulgaria
+4,PAHO,BHR,Bahrain
+1,AFRO,BHS,Bahamas
+12,SEARO,BIH,Bosnia and Herzegovina
+5,PAHO,BLR,Belarus
+9,EURO,BLZ,Belize
+2,AFRO,BMU,Bermuda
+4,PAHO,BOL,Bolivia (Plurinational State of)
+13,WPRO,BRA,Brazil
+9,EURO,BRB,Barbados
+1,AFRO,BRN,Brunei Darussalam
+2,AFRO,BTN,Bhutan
+14,WPRO,BWA,Botswana
+1,AFRO,CAF,Central African Republic
+3,PAHO,CAN,Canada
+1,AFRO,CHE,Switzerland
+2,AFRO,CHL,Chile
+1,AFRO,CHN,China
+4,PAHO,CIV,Côte d'Ivoire
+14,WPRO,CMR,Cameroon
+4,PAHO,COD,D.R. of the Congo
+1,AFRO,COG,Congo
+2,AFRO,COL,Colombia
+14,WPRO,COM,Comoros
+4,PAHO,CPV,Cabo Verde
+2,AFRO,CRI,Costa Rica
+8,EURO,CUW,Curaçao
+3,PAHO,CYM,Cayman Islands
+6,EURO,CYP,Cyprus
+8,EURO,CZE,Czech Republic
+12,SEARO,DEU,Germany
+2,AFRO,DJI,Djibouti
+8,EURO,DMA,Dominica
+7,EMRO,DNK,Denmark
+4,PAHO,DOM,Dominican Republic
+4,PAHO,DZA,Algeria
+5,PAHO,ECU,Ecuador
+7,EMRO,EGY,Egypt
+4,PAHO,ESP,Spain
+1,AFRO,EST,Estonia
+2,AFRO,ETH,Ethiopia
+10,EURO,FIN,Finland
+2,AFRO,FJI,Fiji
+14,WPRO,FRA,France
+8,EURO,GAB,Gabon
+8,EURO,GBR,United Kingdom
+1,AFRO,GEO,Georgia
+1,AFRO,GHA,Ghana
+9,EURO,GIN,Guinea
+8,EURO,GMB,Gambia
+1,AFRO,GNB,Guinea-Bissau
+8,EURO,GNQ,Equatorial Guinea
+4,PAHO,GRC,Greece
+5,PAHO,GRD,Grenada
+1,AFRO,GTM,Guatemala
+1,AFRO,HKG,"China, Hong Kong SAR"
+4,PAHO,HND,Honduras
+5,PAHO,HRV,Croatia
+4,PAHO,HTI,Haiti
+10,EURO,HUN,Hungary
+8,EURO,IDN,Indonesia
+12,SEARO,IND,India
+11,SEARO,IRL,Ireland
+6,EMRO,IRN,Iran (Islamic Republic of)
+7,EMRO,IRQ,Iraq
+8,EURO,ISL,Iceland
+8,EURO,ISR,Israel
+8,EURO,ITA,Italy
+4,PAHO,JAM,Jamaica
+13,WPRO,JOR,Jordan
+6,EMRO,JPN,Japan
+10,EURO,KAZ,Kazakhstan
+2,AFRO,KEN,Kenya
+14,WPRO,KGZ,Kyrgyzstan
+14,WPRO,KHM,Cambodia
+6,EMRO,KNA,Saint Kitts and Nevis
+9,EURO,KOR,Republic of Korea
+14,WPRO,KWT,Kuwait
+10,EURO,LAO,Lao People's DR
+6,EMRO,LBN,Lebanon
+2,AFRO,LBR,Liberia
+1,AFRO,LCA,Saint Lucia
+6,EMRO,LKA,Sri Lanka
+10,EURO,LSO,Lesotho
+8,EURO,LTU,Lithuania
+9,EURO,LUX,Luxembourg
+1,AFRO,LVA,Latvia
+2,AFRO,MAC,"China, Macao SAR"
+14,WPRO,MAR,Morocco
+12,SEARO,MDA,Republic of Moldova
+1,AFRO,MDG,Madagascar
+8,EURO,MDV,Maldives
+14,WPRO,MEX,Mexico
+1,AFRO,MKD,TFYR of Macedonia
+1,AFRO,MLI,Mali
+4,PAHO,MLT,Malta
+14,WPRO,MMR,Myanmar
+10,EURO,MNE,Montenegro
+8,EURO,MNG,Mongolia
+14,WPRO,MOZ,Mozambique
+,EURO,MRT,Mauritania
+7,EMRO,MSR,Montserrat
+2,AFRO,MUS,Mauritius
+12,SEARO,MWI,Malawi
+2,AFRO,MYS,Malaysia
+14,WPRO,NAM,Namibia
+12,SEARO,NER,Niger
+8,EURO,NGA,Nigeria
+13,WPRO,NIC,Nicaragua
+5,PAHO,NLD,Netherlands
+1,AFRO,NOR,Norway
+1,AFRO,NPL,Nepal
+14,WPRO,NZL,New Zealand
+8,EURO,OMN,Oman
+6,EMRO,PAK,Pakistan
+7,EMRO,PAN,Panama
+14,WPRO,PER,Peru
+4,PAHO,PHL,Philippines
+14,WPRO,POL,Poland
+4,PAHO,PRT,Portugal
+5,PAHO,PRY,Paraguay
+14,WPRO,PSE,State of Palestine
+9,EURO,QAT,Qatar
+8,EURO,ROU,Romania
+6,EMRO,RUS,Russian Federation
+9,EURO,RWA,Rwanda
+10,EURO,SAU,Saudi Arabia
+2,AFRO,SDN,Sudan (Former)
+4,PAHO,SEN,Senegal
+4,PAHO,SGP,Singapore
+4,PAHO,SLE,Sierra Leone
+14,WPRO,SLV,El Salvador
+8,EURO,SRB,Serbia
+1,AFRO,STP,Sao Tome and Principe
+6,EMRO,SUR,Suriname
+1,AFRO,SVK,Slovakia
+,EURO,SVN,Slovenia
+1,AFRO,SWE,Sweden
+1,AFRO,SWZ,Swaziland
+13,WPRO,SXM,Sint Maarten (Dutch part)
+9,EURO,SYC,Seychelles
+8,EURO,SYR,Syrian Arab Republic
+7,EMRO,TCA,Turks and Caicos Islands
+14,WPRO,TCD,Chad
+2,AFRO,TGO,Togo
+8,EURO,THA,Thailand
+11,SEARO,TJK,Tajikistan
+7,EMRO,TKM,Turkmenistan
+7,EMRO,TTO,Trinidad and Tobago
+4,PAHO,TUN,Tunisia
+2,AFRO,TUR,Turkey
+8,EURO,TWN,Taiwan
+8,EURO,TZA,U.R. of Tanzania: Mainland
+6,EMRO,UGA,Uganda
+2,AFRO,UKR,Ukraine
+9,EURO,URY,Uruguay
+11,SEARO,USA,United States
+11,SEARO,UZB,Uzbekistan
+1,AFRO,VCT,St. Vincent and the Grenadines
+14,WPRO,VEN,Venezuela (Bolivarian Republic of)
+4,PAHO,VGB,British Virgin Islands
+6,EMRO,VNM,Viet Nam
+9,EURO,YEM,Yemen
+9,EURO,ZAF,South Africa
+14,WPRO,ZMB,Zambia
+2,AFRO,ZWE,Zimbabwe
+10,EURO,,
+6,EMRO,,
+8,EURO,,
+3,PAHO,,
+4,PAHO,,
+9,EURO,,
+14,WPRO,,
+4,PAHO,,
+14,WPRO,,
+7,EMRO,,
+2,AFRO,,
+2,AFRO,,
