@@ -101,7 +101,7 @@ ISO Numeric,ISO Alpha3,ISO Name,WHO Name,PWT Name
 434,LBY,Libya,Libya,
 440,LTU,Lithuania,Lithuania,Lithuania
 442,LUX,Luxembourg,Luxembourg,Luxembourg
-807,MKD,Macdeonia,"Macedonia, the former Yugoslav Republic of",TFYR of Macedonia
+807,MKD,Macdeonia,The former Yugoslav republic of Macedonia,TFYR of Macedonia
 450,MDG,Madagascar,Madagascar,Madagascar
 454,MWI,Malawi,Malawi,Malawi
 458,MYS,Malaysia,Malaysia,Malaysia
@@ -112,7 +112,7 @@ ISO Numeric,ISO Alpha3,ISO Name,WHO Name,PWT Name
 478,MRT,Mauritania,Mauritania,Mauritania
 480,MUS,Mauritius,Mauritius,Mauritius
 484,MEX,Mexico,Mexico,Mexico
-583,FSM,Micronesia,"Micronesia, Federated States of",
+583,FSM,Micronesia,Micronesia (Federated States of),
 498,MDA,Moldova,"Moldova, Republic of",Republic of Moldova
 492,MCO,Monaco,Monaco,
 496,MNG,Mongolia,Mongolia,Mongolia
@@ -170,8 +170,8 @@ ISO Numeric,ISO Alpha3,ISO Name,WHO Name,PWT Name
 752,SWE,Sweden,Sweden,Sweden
 756,CHE,Switzerland,Switzerland,Switzerland
 760,SYR,Syrian Arab Republic,Syrian Arab Republic,Syrian Arab Republic
-762,TJK,Tajikistan,"Tanzania, United Republic of",U.R. of Tanzania: Mainland
-834,TZA,Tanzania,Tajikistan,Tajikistan
+762,TJK,Tajikistan,Tajikistan,Tajikistan
+834,TZA,Tanzania,United Republic of Tanzania,U.R. of Tanzania: Mainland
 764,THA,Thailand,Thailand,Thailand
 626,TLS,Timor-Leste,Timor-Leste,
 768,TGO,Togo,Togo,Togo
@@ -184,7 +184,7 @@ ISO Numeric,ISO Alpha3,ISO Name,WHO Name,PWT Name
 800,UGA,Uganda,Uganda,Uganda
 804,UKR,Ukraine,Ukraine,Ukraine
 784,ARE,United Arab Emirates,United Arab Emirates,United Arab Emirates
-826,GBR,United Kingdom,United Kingdom,United Kingdom
+826,GBR,United Kingdom,United Kingdom of Great Britain and Northern Ireland,United Kingdom
 840,USA,Untied States,United States of America,United States
 858,URY,Uruguay,Uruguay,Uruguay
 860,UZB,Uzbekistan,Uzbekistan,Uzbekistan
