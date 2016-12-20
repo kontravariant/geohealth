@@ -4,9 +4,11 @@ ISO Numeric,ISO Alpha3,ISO Name,WHO Name,PWT Name
 12,DZA,Algeria,Algeria,Algeria
 20,AND,Andorra,Andorra,
 24,AGO,Angola,Angola,Angola
+660,AIA,Anguilla,,Anguilla
 28,ATG,Antigua and Barbuda,Antigua And Barbuda,Antigua and Barbuda
 32,ARG,Argentina,Argentina,Argentina
 51,ARM,Armenia,Armenia,Armenia
+533,ABW,Aruba,Aruba,Aruba
 36,AUS,Australia,Australia,Australia
 40,AUT,Austria,Austria,Austria
 31,AZE,Azerbaijan,Azerbaijan,Azerbaijan
@@ -18,6 +20,7 @@ ISO Numeric,ISO Alpha3,ISO Name,WHO Name,PWT Name
 56,BEL,Belgium,Belgium,Belgium
 84,BLZ,Belize,Belize,Belize
 204,BEN,Benin,Benin,Benin
+60,BMU,Bermuda,,Bermuda
 64,BTN,Bhutan,Bhutan,Bhutan
 68,BOL,Bolivia,Bolivia,Bolivia (Plurinational State of)
 70,BIH,Bosnia and Herzegovina,Bosnia and Herzegovina,Bosnia and Herzegovina
@@ -31,6 +34,7 @@ ISO Numeric,ISO Alpha3,ISO Name,WHO Name,PWT Name
 120,CMR,Cameroon,Cameroon,Cameroon
 124,CAN,Canada,Canada,Canada
 132,CPV,Cabo Verde,Cape Verde,Cabo Verde
+136,CYM,Cayman Islands,,Cayman Islands
 140,CAF,Central African Republic,Central African Republic,Central African Republic
 148,TCD,Chad,Chad,Chad
 152,CHL,Chile,Chile,Chile
@@ -41,9 +45,10 @@ ISO Numeric,ISO Alpha3,ISO Name,WHO Name,PWT Name
 184,COK,Cook Islands,Cook Islands,
 796,TCA,Turks and Caicos Islands,,Turks and Caicos Islands
 188,CRI,Costa Rica,Costa Rica,Costa Rica
-384,CIV,Cote d'Ivoire,C√¥te d'Ivoire,C√¥te d'Ivoire
+384,CIV,Cote d'Ivoire,CÌ«te d'Ivoire,CÌ«te d'Ivoire
 191,HRV,Croatia,Croatia,Croatia
 192,CUB,Cuba,Cuba,
+531,CUW,Curaçao,,Curaçao
 196,CYP,Cyprus,Cyprus,Cyprus
 203,CZE,Czech Republic,Czech Republic,Czech Republic
 408,PRK,Democratic People's Republic of Korea,Democratic Peoples Republic of Korea,
@@ -170,6 +175,7 @@ ISO Numeric,ISO Alpha3,ISO Name,WHO Name,PWT Name
 752,SWE,Sweden,Sweden,Sweden
 756,CHE,Switzerland,Switzerland,Switzerland
 760,SYR,Syrian Arab Republic,Syrian Arab Republic,Syrian Arab Republic
+158,TWN,"Taiwan, Republic of China","Taiwan, ROC",Taiwan
 762,TJK,Tajikistan,Tajikistan,Tajikistan
 834,TZA,Tanzania,United Republic of Tanzania,U.R. of Tanzania: Mainland
 764,THA,Thailand,Thailand,Thailand
