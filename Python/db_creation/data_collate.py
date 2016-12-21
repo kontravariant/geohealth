@@ -18,7 +18,7 @@ def dict_collate():
     #health directory to iterate
     hwd = '../../data/Health/WHO'
     #load country map and put MISSING into NA values for usability here (NON-PERMANENT)
-    map = pd.read_csv(os.path.join(cwd,"country_info/country_map.csv"))
+    map = pd.read_csv(os.path.join(cwd,"country_info/country_map.csv"),encoding='latin1')
     map = map.fillna('Missing')
 
 
@@ -34,7 +34,7 @@ def dict_collate():
     for datfile in os.listdir(hwd):
         if datfile.endswith(".csv"):
             #read in datfile
-            df = pd.read_csv(os.path.join(hwd,datfile),na_values=['.','..','...'])
+            df = pd.read_csv(os.path.join(hwd,datfile),na_values=['.','..','...'],encoding='latin1')
             #create list of countries in current data set
             #WILL country column label change? can we use boolean for column name?
             countries = df['Country'].values.tolist()
@@ -215,7 +215,7 @@ def dict_collate():
     #read PWT9.0 stata .dta file
     cwd = '../../data/'
     ewd = '../../data/Econ/'
-    map = pd.read_csv(os.path.join(cwd,"country_info/country_map.csv"))
+    map = pd.read_csv(os.path.join(cwd,"country_info/country_map.csv"),encoding='latin1')
     map = map.fillna('Missing')
     pwt = pd.read_stata(os.path.join(ewd,'pwt90.dta'))
 
