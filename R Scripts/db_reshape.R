@@ -6,8 +6,11 @@ library(readr)
 db = dbConnect(SQLite(), 'data/country_data.sqlite')
 #pull table names, escape in quotes
 cnames = dbListTables(db)
+#ensure PANEL table is not included, as that is what we are creating here
+cnames = cnames[cnames != 'PANEL']
+#escape all names in quotes
 tbl_name = sapply(cnames, function(x) paste('"',x,'"',sep = ""))
-#list out tables named with ISO Alpah3
+#list out tables named with ISO Alpha3
 tbl = list(); tbl = lapply(tbl_name, function(x) tbl[x] = dbReadTable(db,x))
 
 ##REFORMAT TO LONG (cast by year, add country column)
@@ -63,6 +66,6 @@ col_format_stack = function(casted) {
 #stack long country data sets into panel
 binded = col_format_stack(tbl.cast.named.years)
 #write stacked data sets
-dbWriteTable(db,"PANEL",binded)
+dbWriteTable(db,"PANEL",binded,overwrite=TRUE)
 
 
