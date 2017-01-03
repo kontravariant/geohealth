@@ -2,7 +2,8 @@
 
 #ignore data directory because files get large
 project/data/
-
+#ignore all text editor backup files
+*~
 
 #mac os
 .DS_Store
