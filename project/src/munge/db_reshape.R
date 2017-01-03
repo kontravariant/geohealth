@@ -64,8 +64,8 @@ col_format_stack = function(casted) {
   return(bound)
 }
 #stack long country data sets into panel
-binded = col_format_stack(tbl.cast.named.years)
+stacked = col_format_stack(tbl.cast.named.years)
 #write stacked data sets
-dbWriteTable(db,"PANEL",binded,overwrite=TRUE)
+dbWriteTable(db,"PANEL",stacked,overwrite=TRUE)
 
 

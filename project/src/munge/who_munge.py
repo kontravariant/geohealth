@@ -3,15 +3,17 @@ import os
 import re
 import shutil
 
+datadir = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '../../', 'data/'))
+
 def who_munge():
 
     outframe = pd.DataFrame()
-    cwd = '../../data/raw/who'
-    tgt_dir = '../../data/intermediate/who'
+    cwd = os.path.join(datadir,'raw/who/')
+    tgt_dir = os.path.join(datadir,'intermediate/who/')
 
     for fname in os.listdir(cwd):
         res = re.search("\((.*?)\)",fname)
-        df = pd.read_csv(os.path.join(cwd, fname),skiprows=1)
+        df = pd.read_csv(os.path.join(cwd, fname),skiprows=1,encoding='latin1')
 
         if res:
             stat = res.group(1)

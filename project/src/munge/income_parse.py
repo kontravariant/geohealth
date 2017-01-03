@@ -1,9 +1,10 @@
 import pandas as pd
-import xlrd
+import xlrd, os
+
+datadir = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '../../', 'data/'))
 
 def income_code_parser():
-    dat = pd.read_excel('../../data/raw/country/CLASS.xls',)
-    wb = xlrd.open_workbook('../../data/raw/country/CLASS.xls')
+    wb = xlrd.open_workbook(datadir+'/raw/country/CLASS.xls')
     sheet = wb.sheet_by_index(0)
     names = sheet.col_values(2,6,224)
     countries = sheet.col_values(3,6,224)
@@ -22,7 +23,7 @@ def income_code_parser():
     df.loc[df[1] == 'ZAR',1] = 'COD'
     df.loc[df[1] == 'ROM',1] = 'ROU'
     df.loc[df[1] == 'TMP',1] = 'TLS'
-    df.to_csv('../../data/intermediate/country/income_codes.csv',index=False)
+    df.to_csv(datadir+'/intermediate/country/income_codes.csv',index=False)
 
 if __name__ == "__main__":
     income_code_parser()

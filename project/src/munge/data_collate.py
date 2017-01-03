@@ -13,13 +13,13 @@ import pickle
 #dict of country dataframes
 countryframes = {}
 #working directory for data files, save time later
-cwd = '../../data/'
+datadir = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '../../', 'data/'))
 #health directory to iterate
-hwd = '../../data/intermediate/who/'
-wwd = '../../data/intermediate/wdi/'
-ewd = '../../data/intermediate/pwt/'
+hwd = os.path.join(datadir,'intermediate/who/')
+wwd = os.path.join(datadir,'intermediate/wdi/')
+ewd = os.path.join(datadir,'intermediate/pwt/')
 #load country map and put MISSING into NA values for usability here (NON-PERMANENT)
-mapfile = os.path.join(cwd,"country_map.csv")
+mapfile = os.path.join(datadir,"country_map.csv")
 map = pd.read_csv(mapfile,encoding='latin1')
 map = map.fillna('Missing')
 
@@ -258,7 +258,7 @@ def pwt_collate(countryframes):
         #sort_list = sorted(countryframes[code].columns, key=lambda x: str(x))
         #countryframes[code] = countryframes[code].reindex_axis(sort_list, axis=1)
     #export UKR to csv as example
-    countryframes['UKR'].to_csv('../../data/processed/ukr.csv',index=False)
+    countryframes['UKR'].to_csv(os.path.join(datadir+'/processed/ukr.csv'),index=False)
     #print confirmation message after PWT parse
     print("{} countries with some amount of data".format(len(countryframes)))
     #data_collate() function returns the dict of {code:data}
@@ -266,7 +266,7 @@ def pwt_collate(countryframes):
 
 def dict_pickler(data):
     # pickle the data dictionary into binary pkl
-    pickle.dump(data, open("../../data/processed/countries.pkl", "wb"))
+    pickle.dump(data, open(os.path.join(datadir,"processed/countries.pkl"), "wb"))
 
 
 def collate_and_pickle():

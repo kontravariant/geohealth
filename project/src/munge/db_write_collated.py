@@ -3,10 +3,12 @@ import pandas as pd
 import os
 import sqlite3
 
+datadir = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '../../', 'data/'))
+
 def write_db():
 
     #sqlite connection
-    cwd = '../../data/processed/'
+    cwd = os.path.join(datadir,'processed/')
     con_path = os.path.join(cwd,'geohealth.sqlite')
     con = sqlite3.connect(con_path)
     #load pickled dictionary of {code:table}

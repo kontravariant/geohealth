@@ -3,10 +3,10 @@
 import os
 import shutil
 
+dat_dir = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '../../', 'data/'))
 
 def pwt_munge():
 
-    dat_dir = '../../data/'
     raw_dir = os.path.join(dat_dir,'raw/pwt/')
     int_dir = os.path.join(dat_dir,'intermediate/pwt/')
     for fname in os.listdir(raw_dir):

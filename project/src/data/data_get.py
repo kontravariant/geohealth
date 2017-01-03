@@ -11,6 +11,8 @@ import re
 import zipfile
 import pandas as pd
 
+datadir = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '../../', 'data/'))
+
 #download immunization csv files from who.int
 def who_get():
     data_page_link = "http://apps.who.int/gho/data/node.main.A824?lang=en"
@@ -37,12 +39,12 @@ def who_get():
         page_title = driver.title
         res = re.search("r(.*?\|\ )(.*)(\ -)", page_title)
         stat = res.group(2)
-        driver.switch_to_frame(driver.find_element_by_id("content_iframe"))
-        driver.switch_to_frame(driver.find_element_by_id("passthrough"))
+        driver.switch_to.frame(driver.find_element_by_id("content_iframe"))
+        driver.switch_to.frame(driver.find_element_by_id("passthrough"))
         aes = driver.find_elements_by_xpath("//a[contains(@class, 'control')]")[1]
         lnk = aes.get_attribute('href')
         print(lnk)
-        urllib.request.urlretrieve(lnk,'../../data/raw/who/{}.csv'.format(stat))
+        urllib.request.urlretrieve(lnk,os.path.join(datadir+'/raw/who/{}.csv'.format(stat)))
         print(stat)
         driver.quit()
 
@@ -54,7 +56,7 @@ def wdi_get():
     aref = driver.find_element_by_xpath("//a[contains(@data-reactid,'196')]")
     href = aref.get_attribute('href')
 
-    fdir = '../../data/raw/wdi/'
+    fdir = os.path.join(datadir,'raw/wdi/')
 
     fpath = fdir+'wdi.zip'
     urllib.request.urlretrieve(href,fpath)
@@ -68,13 +70,13 @@ def wdi_get():
 def pwt_get():
     dta_url = "http://www.rug.nl/ggdc/docs/pwt90.dta"
     split_url = urllib.parse.urlsplit(dta_url)
-    filename = "../../data/raw/pwt/" +  split_url.path.split("/")[-1]
+    filename = os.path.join(datadir,"raw/pwt/",split_url.path.split("/")[-1])
     urllib.request.urlretrieve(dta_url, filename)
 
 def cdata_get():
     income_xls_url = "http://databank.worldbank.org/data/download/site-content/CLASS.xls"
     split_url = urllib.parse.urlsplit(income_xls_url)
-    filename = "../../data/raw/country/" + split_url.path.split("/")[-1]
+    filename = os.path.join(datadir,"raw/country/",split_url.path.split("/")[-1])
     urllib.request.urlretrieve(income_xls_url, filename)
 
 def get_all():
