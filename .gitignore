@@ -1,5 +1,9 @@
 #Currently includes, Python, R and JetBrains ignores from github templates.
 
+#ignore data directory because files get large
+project/data/
+
+
 #mac os
 .DS_Store
 

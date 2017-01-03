@@ -3,7 +3,7 @@ library(reshape)
 library(dplyr)
 library(readr)
 #connect to country_data
-db = dbConnect(SQLite(), 'data/country_data.sqlite')
+db = dbConnect(SQLite(), 'project/data/processed/geohealth.sqlite')
 #pull table names, escape in quotes
 cnames = dbListTables(db)
 #ensure PANEL table is not included, as that is what we are creating here
@@ -23,10 +23,10 @@ namelist = names(tbl.cast)
 tbl.cast.named = Map(cbind, tbl.cast, country=namelist)
 #remove 'X' from every year i.e. X1950-->1950
 tbl.cast.named.years = lapply(tbl.cast.named,
-                              function(x) 
-                                mutate(x, year=as.factor(
-                                  substring(
-                                    as.character(year),first = 2,last = nchar(as.character(year))))))
+                    function(x) 
+                    mutate(x, year=as.factor(
+                    substring(
+                    as.character(year),first = 2,last = nchar(as.character(year))))))
 #function to stack the country panels
 col_format_stack = function(casted) {
   #start null list

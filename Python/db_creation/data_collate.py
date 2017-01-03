@@ -23,7 +23,7 @@ def dict_collate():
 
 
     '''
-    Dead man trigger
+    Kill switch
     single test vs all ~200
     '''
     #########
