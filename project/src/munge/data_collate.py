@@ -12,6 +12,7 @@ import pickle
 
 #dict of country dataframes
 countryframes = {}
+statframes = {}
 #working directory for data files, save time later
 datadir = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '../../', 'data/'))
 #health directory to iterate
@@ -23,13 +24,14 @@ mapfile = os.path.join(datadir,"country_map.csv")
 map = pd.read_csv(mapfile,encoding='latin1')
 map = map.fillna('Missing')
 
+
 '''
   Kill switch
   single test vs all ~200
 '''
 #########
 iso_codes = map['ISO Alpha3'].values.tolist()
-# iso_codes = ['SDN']
+#iso_codes = ['SDN']
 #########
 
 def who_collate():
@@ -38,10 +40,9 @@ def who_collate():
             #read in datfile
             df = pd.read_csv(os.path.join(hwd,datfile),na_values=['.','..','...'],encoding='latin1')
             #create list of countries in current data set
-            #WILL country column label change? can we use boolean for column name?
             countries = df['Country'].values.tolist()
             #go through all countries in current data set and get their codes
-            codes = []
+            codedict = {}
             for country in countries:
                 #search only 'fullname' columns in map
                 for col in map.columns[2:5]:
@@ -54,8 +55,8 @@ def who_collate():
                     if len(trues) == 1:
                         idxs = test[test==True].index.tolist()
                         code = map.loc[idxs[0],'ISO Alpha3']
-                        #append code to code list
-                        codes.append(code)
+                        #append map code to country
+                        codedict[country] = code
                         #break out, go to next country
                         break
                     #if more than one match, we must find the best match
@@ -79,16 +80,10 @@ def who_collate():
                         #for each match in fuzzymatch vector, get the score
                         for i in match:
                             fracs.append(i[1])
-                        #get the index of the maximum match percent
-                        maxix = fracs.index(max(fracs))
-                        #get the ISO name of the maximum match
-                        maxname = match[maxix][0]
-                        #use maxname to get the index of ISO name in names vector
-                        codeix = names.index(maxname)
-                        #get the code in the placecode vector by index of the name
-                        code = placecode[codeix]
-                        #append code to codes
-                        codes.append(code)
+                        #get the code in the placecode vector by index of the name with max match pct%
+                        code = placecode[names.index(match[fracs.index(max(fracs))][0])]
+                        #map code to country
+                        codedict[country] = code
                         #go to next country
                         break
                     #if no match move on
@@ -96,68 +91,37 @@ def who_collate():
                         pass
 
             # holder of statistic dataframes, [stat_code:table]
-            statframes = {}
-            if len(codes)==len(countries):
-                print(len(codes))
-                print('checks out for {}'.format(datfile))
-                df['Country'] = codes
-                stat = str.replace(datfile,".csv","")
-                statframes[stat]=df
-            else:
-                print('not good @ {}'.format(datfile))
+            stat = str.replace(datfile,".csv","")
+            outframe = pd.DataFrame()
+            ###outframe.append()
+            for ctry,code in codedict.items():
+                datline = df.loc[df['Country'] == ctry]
+                datline = datline.reset_index()
+                del datline['index']
+                datline.set_value(0,'Country',code)
+                outframe = outframe.append(datline, ignore_index=True)
+            print(stat)
+            statframes[stat] = outframe
+
+
 
     #all codes in map file (master list of ISO Alpha3)
     for code in iso_codes:
         #initialize dataframe
         df = pd.DataFrame()
-        #for each statistic in the statframes dictionary dict of dataframes
-        for stat,dat in statframes.items():
-            #get statistic name from the text in parentheses of column 2, i.e. measles coverage (*MCV*) (%)
-            #get all rows matching current code
-            rown = dat.loc[dat['Country'] == code]
-            #turn those indices into a list
-            vals = rown.values.tolist()
-            #unpack/flatten that list and remove first column which is the country name
-            vals = list(chain.from_iterable(vals))[1:]
+        cframe = pd.DataFrame()
+        #iterate through all WHO statistic dataframes, grab the current country row and append to
+        #transient cframe to put into countryframes data structure
+        for stat,tbl in statframes.items():
+            rown = pd.DataFrame(tbl.loc[tbl['Country']==code])
+            rown['Statistic'] = stat
+            del rown['Country']
+            clist = [str(ctry).strip() for ctry in rown.columns]
+            rown.columns = clist
+            cframe = cframe.append(rown,ignore_index=True)
+        countryframes[code] = cframe
 
-            items = []
-
-            #if there are any hits in the rown list
-            if len(rown) > 0:
-                #get column names and put into list
-                heads = dat.columns.tolist()
-                years = []
-                #start the data row with the statistic name
-                items.append(stat)
-                #for each column name, get the 4 digit date
-                for i in heads:
-                    reyear = re.compile('(\d{4})')
-                    year_search = reyear.search(i)
-                    #if a year was found append it to the years list
-                    if year_search:
-                        year = year_search.group(1)
-                        years.append(year)
-                    else:
-                        pass
-                #start the column names with 'Statistic'
-                cols = []
-                cols.append('Statistic')
-                #append all years to column name list, as STRINGs
-                for item in years:
-                    cols.append(str(item))
-                #for each value in the row, append to the data row
-                for item in vals:
-                    items.append(item)
-                #create a dataframe from data row (items) and column names (cols)
-                appender = pd.DataFrame(data=[items],columns=cols)
-                #append current appender to empty data frame with reset indices
-                df = df.append(appender, ignore_index=True)
-            else:
-                #print error if len(rown) = 0
-                print("HEALTH: {} ERROR @ {}".format(code,stat))
-        #using current code as key, create dictionary pair with data frame
-        countryframes[code] = df
-
+    print("Countries missing: \n","--> ",[ctry for ctry in iso_codes if ctry not in list(countryframes.keys())])
     return(countryframes)
 
 
@@ -184,7 +148,7 @@ def wdi_collate(countryframes):
             #append all years from data set (col 5 and on) as STRINGs
             for col in heads[5:]:
                 year = col[:4]
-                years.append(str(year))
+                years.append(str(year).strip())
             #for all countries in master ISO Alpha3 list
             for code in iso_codes:
                 #data rows that match the current code
@@ -240,7 +204,7 @@ def pwt_collate(countryframes):
         head.append('Statistic')
         #append all year names as strings into header row
         for year in years:
-            head.append(str(year))
+            head.append(str(year).strip())
         #data starts at column 3
         dat = dat.iloc[:,3:]
         #rename column year to Statistic and transpose
@@ -258,7 +222,7 @@ def pwt_collate(countryframes):
         #sort_list = sorted(countryframes[code].columns, key=lambda x: str(x))
         #countryframes[code] = countryframes[code].reindex_axis(sort_list, axis=1)
     #export UKR to csv as example
-    countryframes['UKR'].to_csv(os.path.join(datadir+'/processed/ukr.csv'),index=False)
+    countryframes['USA'].to_csv(os.path.join(datadir+'/processed/usa.csv'),index=False)
     #print confirmation message after PWT parse
     print("{} countries with some amount of data".format(len(countryframes)))
     #data_collate() function returns the dict of {code:data}
