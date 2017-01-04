@@ -1,7 +1,7 @@
 #Currently includes, Python, R and JetBrains ignores from github templates.
 
 #ignore data directory because files get large
-project/data/
+data/*
 #ignore all text editor backup files
 *~
 
