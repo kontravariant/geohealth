@@ -5,7 +5,9 @@ Retrospective broad analysis of national health and economic indicators.
 **Data from:**
 
 [World Health Organization](www.who.int),
-[Penn World Tables 9.0](www.rug.nl/research/ggdc/data/pwt/pwt-9.0)
+
+[Penn World Tables 9.0](www.rug.nl/research/ggdc/data/pwt/pwt-9.0),
+
 [world bank world development indicators](http://data.worldbank.org/data-catalog/world-development-indicators)
 
 **Statistical Philosophy and investigative paradigm:**
