@@ -86,7 +86,8 @@ stacked = col_format_stack(tbl.cast.named.years)
 ####join INCOME CODES to stacked data
 ####################################
 #read in csv of income codes
-raw.dat = read.csv("project/data/intermediate/country/income_codes.csv")
+income.path = file.path(scriptPath,'../..','data/intermediate/country','income_codes.csv')
+raw.dat = read.csv(income.path)
 #rename columns
 colnames(raw.dat) = c('country',"country code","income level","income code")
 panel = stacked
