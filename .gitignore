@@ -1,7 +1,9 @@
 #Currently includes, Python, R and JetBrains ignores from github templates.
 
 #ignore data directory because files get large
+!data/country_map.csv
 data/*
+
 #ignore all text editor backup files
 *~
 #geckodriver from selenium
