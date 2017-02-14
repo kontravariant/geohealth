@@ -2,13 +2,7 @@
 #### with a small 'g'
 Retrospective broad analysis of national health and economic indicators.
 
-**Data from:**
 
-* [World Health Organization](www.who.int)
-
-* [Penn World Tables 9.0](www.rug.nl/research/ggdc/data/pwt/pwt-9.0)
-
-* [World bank world development indicators](http://data.worldbank.org/data-catalog/world-development-indicators)
 
 **Statistical Philosophy and investigative paradigm:**
 
@@ -27,7 +21,15 @@ Reproducibility being formulated in project/ subfolder as the study progresses. 
     * *munge* is code to format, combine and melt/cast raw data files, and create features from that data
     * *model* contains scripts to train model and run predictions
     * *visualization* scripts produce graphics
-    * autorun.py runs the project from start to finish. (will) Take arguments to stop at a certain stage.
+* Makefile is used to initiate, clean up/roll back edits and otherwise run the project from start to finish.
+    * parameters allow for pause at certain stages to conduct independent analysis/examination of data.
+    
+    
 **Citation:**
 
-Feenstra, Robert C., Robert Inklaar and Marcel P. Timmer (2015), "The Next Generation of the Penn World Table" forthcoming American Economic Review, available for download at www.ggdc.net/pwt
+* Feenstra, Robert C., Robert Inklaar and Marcel P. Timmer (2015), "The Next Generation of the Penn World Table" forthcoming American Economic Review, available for download at www.ggdc.net/pwt
+
+* *Data from:*
+    * [World Health Organization](www.who.int)
+    * [Penn World Tables 9.0](www.rug.nl/research/ggdc/data/pwt/pwt-9.0)
+    * [World bank world development indicators](http://data.worldbank.org/data-catalog/world-development-indicators)
